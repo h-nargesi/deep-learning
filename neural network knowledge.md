@@ -1,4 +1,4 @@
-progress: P02 - M03 - L01 - C03
+progress: P02 - M02 - L02 - C04
 
 progress: P07 - M01 - L04 - C23
 
@@ -84,8 +84,8 @@ The reason why neural network doesn't train as planned:
 
   - Separate training data, validation data and test data
   - Never use Testing set for training model (P2-M1-L1)
-  - Complexity (Find the best neurons' architect) (Under-fitting, Over-fitting) (P7-M1-L3)
-  - Early Termination (train until increasing errors of test set) (P7-M1-L3)
+  - Complexity (Find the best neurons' architect) (Under-fitting, Over-fitting) (P7-M1-L3-C5)
+  - Early Termination (train until increasing errors of test set) (P7-M1-L3-C5)
 
 - **K Fold Cross Validation** (P2-M1-L1-C8)
 
@@ -93,13 +93,13 @@ The reason why neural network doesn't train as planned:
   >
   > Then we average the results the get final model.
 
-- **Regularization** (P7-M1-L3, P2-M5-L1-S9)
+- **Regularization** (P7-M1-L3-C7, P2-M5-L1-C9)
 
   > *"The whole problem with A.I. is that bad models are so certain of themselves, and good models so full of doubts" Bertrand Russell*
   >
   > change error function. add L1 and L2
 
-- **Dropout** (P7-M1-L3, P2-M5-L1-S11,S12)
+- **Dropout** (P7-M1-L3, P2-M5-L1-C11,C12)
 
   > turn off some nodes in each epoch
 
@@ -107,7 +107,7 @@ The reason why neural network doesn't train as planned:
 
   > **Random Restart**: To run from local minimum and find total minimum
   >
-  > **Momentum**: Use average of previous gradients to push from local minimum (P2-M4-L2-S23, P7-M1-L3-S15)
+  > **Momentum**: Use average of previous gradients to push from local minimum (P2-M4-L2-C23, P7-M1-L3-C15)
 
 - **Other Activation Function** (P7-M1-L3)
 
@@ -121,17 +121,17 @@ The reason why neural network doesn't train as planned:
 
   > To eliminate the noise
 
-- **Stochastic Gradient Descent (SGD)** (P2-M4-L2-S22)
+- **Stochastic Gradient Descent (SGD)** (P2-M4-L2-C22)
 
   > SGD: to take different small subsets of data, run them through neural network, calculate the gradient of erro	r function, then move one step in that direction in each epoch.
   >
   > BGD: to take all of data to train our model in each epoch.
 
-- **Learning rate decay** in SGD (P2-M4-L2-S23)
+- **Learning rate decay** in SGD (P2-M4-L2-C23)
 
 ------------------------------------------------------------------------
 
-Inputs with zero mean and small equal variance (P2-M4-L2-S19,S23)
-Initial weights randomly with zero mean and small equal variance (P2-M4-L2-S19,S23)
+Inputs with zero mean and small equal variance (P2-M4-L2-C19,C23)
+Initial weights randomly with zero mean and small equal variance (P2-M4-L2-C19,C23)
 
 ## Convolutional Neural Networks
