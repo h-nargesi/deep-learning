@@ -1,4 +1,4 @@
-progress: P02 - M04 - L02 - C09
+progress: P02 - M04 - L02 - C19
 
 progress: P07 - M01 - L04 - C23
 
@@ -121,6 +121,12 @@ The reason why neural network doesn't train as planned:
 
   > To eliminate the noise
 
+- **Numerical Stability** in SGD (P2-M4-L2-C19)
+
+  > **Normalized Inputs And Initial Weights**:
+  >   1. Inputs with zero mean and small equal variance
+  >   2. Initial weights randomly with zero mean and small equal variance
+
 - **Stochastic Gradient Descent (SGD)** (P2-M4-L2-C22)
 
   > SGD: to take different small subsets of data, run them through neural network, calculate the gradient of erro	r function, then move one step in that direction in each epoch.
@@ -128,10 +134,5 @@ The reason why neural network doesn't train as planned:
   > BGD: to take all of data to train our model in each epoch.
 
 - **Learning rate decay** in SGD (P2-M4-L2-C23)
-
-------------------------------------------------------------------------
-
-Inputs with zero mean and small equal variance (P2-M4-L2-C19,C23)
-Initial weights randomly with zero mean and small equal variance (P2-M4-L2-C19,C23)
 
 ## Convolutional Neural Networks
