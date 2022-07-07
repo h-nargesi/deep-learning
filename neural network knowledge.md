@@ -121,7 +121,7 @@ The reason why neural network doesn't train as planned:
 
   > To eliminate the noise
 
-- **Numerical Stability** in SGD (P2-M4-L2-C19)
+- **Numerical Stability** (P2-M4-L2-C19)
 
   > **Normalized Inputs And Initial Weights**:
   >   1. Inputs with zero mean and small equal variance
