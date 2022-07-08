@@ -1,6 +1,6 @@
-progress: P02 - M04 - L02 - C27
+progress: P2 - M5 - L1 - C5
 
-progress: P07 - M01 - L04 - C23
+progress: P7 - M1 - L4 - C23
 
 # Neural Networks
 
