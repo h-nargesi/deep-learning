@@ -1,4 +1,4 @@
-progress: P2 - M5 - L1 - C5
+progress: P2 - M5 - L1 - C13
 
 progress: P7 - M1 - L4 - C23
 
@@ -97,7 +97,12 @@ The reason why neural network doesn't train as planned:
 
   > *"The whole problem with A.I. is that bad models are so certain of themselves, and good models so full of doubts" Bertrand Russell*
   >
-  > change error function. add L1 and L2
+  > Keeping the weights smaller to prevent model from being certain.
+  >
+  > change error function. add L1 or L2.
+  > 
+  > L1: good for feature selection.
+  > L2: normally better for training models.
 
 - **Dropout** <small>(P7-M1-L3, P2-M5-L1-C11,C12)</small>
 
