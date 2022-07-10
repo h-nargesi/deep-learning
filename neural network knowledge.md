@@ -1,4 +1,4 @@
-progress: P2 - M5 - L1 - C13
+progress: P2 - M5 - L2 - C27
 
 progress: P7 - M1 - L4 - C23
 
@@ -147,3 +147,35 @@ The reason why neural network doesn't train as planned:
   > **Learning rate tunning**: Use low learning rate. <small>(P2-M4-L2-C24)</small>
 
 ## Convolutional Neural Networks
+
+- **Convolution** <small>(P2-M5-L2-C4,C11)</small>
+
+  > Sharing the parameters and weights to all input data
+  >
+  > **Stride**: the count of moving conv-net in input layer
+  >
+  > **Padding**: the padding of conv-net from the border of input layer.
+  >
+  > - Same padding: the conv-net goes on input leayer without any extrusion
+  >   > `out_height = ceil(in_height / strides[1])` <br>
+  >   > `out_width = ceil(in_width / strides[2])`
+  > - Valid padding: the conv-net goes on input leayer with extrusion
+  >   > `out_height = ceil((in_height - filter_height + 1) / strides[1])` <br>
+  >   > `out_width = ceil((in_width - filter_width + 1) / strides[2])`
+
+- **Pooling** <small>(P2-M5-L2-C18-C28)</small>
+
+  > Combining all conv-net result neighborhood togather. (consider pooling size and pooling strides)
+  > - Maximum
+  > - Average
+  >
+  > For a pooling layer the output depth is the same as the input depth. Additionally, the pooling operation is applied individually for each depth slice.
+  >
+  > Recently, pooling layers have fallen out of favor. Some reasons are: <small>(P2-M5-L2-C21)</small>
+  > - Recent datasets are so big and complex we're more concerned about underfitting.
+  > - Dropout is a much better regularizer.
+  > - Pooling results in a loss of information. Think about the max pooling operation as an example. We only keep the largest of n numbers, thereby disregarding n-1 numbers completely.
+
+- **1x1 Convolutions** <small>(P2-M5-L2-C28)</small>
+
+- **Inception** <small>(P2-M5-L2-C18)</small>
