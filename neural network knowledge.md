@@ -1,4 +1,4 @@
-progress: P2 - M5 - L2 - C27
+progress: P2 - M5 - L2 - C28
 
 progress: P7 - M1 - L4 - C23
 
@@ -178,4 +178,8 @@ The reason why neural network doesn't train as planned:
 
 - **1x1 Convolutions** <small>(P2-M5-L2-C28)</small>
 
-- **Inception** <small>(P2-M5-L2-C18)</small>
+  > Is a very inexpensive way to make your models deeper and have more parameters without completely changeing their structure.
+
+- **Inception** <small>(P2-M5-L2-C29)</small>
+
+  > 
