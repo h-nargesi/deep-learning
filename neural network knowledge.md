@@ -1,4 +1,4 @@
-progress: P2 - M5 - L2 - C28
+progress: P2 - M5 - L2 - C35
 
 progress: P7 - M1 - L4 - C23
 
@@ -182,4 +182,10 @@ The reason why neural network doesn't train as planned:
 
 - **Inception** <small>(P2-M5-L2-C29)</small>
 
-  > 
+  > Using composition of multi-way convolution instead of a single convolution.
+
+These are the resources we recommend in particular:
+
+  - Andrej Karpathy's [CS231n Stanford course](http://cs231n.github.io/) on Convolutional Neural Networks.
+  - Michael Nielsen's [free book](http://neuralnetworksanddeeplearning.com/) on Deep Learning.
+  - Goodfellow, Bengio, and Courville's more advanced [free book](http://deeplearningbook.org/) on Deep Learning.
