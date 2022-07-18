@@ -13,6 +13,7 @@ face_generation/data/
 *.p
 *.pkl
 *.zip
+*.tar.gz
 *.pickle
 
 */.floyd*
