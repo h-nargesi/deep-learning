@@ -1,6 +1,6 @@
-progress: P2 - M5 - L4 - C2
+progress: P2 - M5 - L4 - C3
 
-progress: P7 - M1 - L4 - C23
+progress: P7 - M1 - L5 - C8
 
 # Neural Networks
 
@@ -132,19 +132,33 @@ The reason why neural network doesn't train as planned:
   >   1. Inputs with zero mean and small equal variance
   >   2. Initial weights randomly with zero mean and small equal variance
 
-- **Stochastic Gradient Descent (SGD)** <small>(P2-M4-L2)</small>
-
-  > SGD: taking different small subsets of data, run them through neural network, calculate the gradient of error function, then move one step in that direction in each epoch. <small>(P2-M4-L2-C22)</small>
-  > ADAGRAD: it uses momentum and learning rate decay <small>(P2-M4-L2-C24)</small>
-  > Mini-batch <small>(P2-M4-L2-C25)</small>
-  >
-  > BGD: taking all of data to train our model in each epoch.
-
 - **Learning rate** in SGD <small>(P2-M4-L2)</small>
 
   > **Learning rate decay**: Making learning rate smaller over the steps. <small>(P2-M4-L2-C23)</small>
   >
   > **Learning rate tunning**: Use low learning rate. <small>(P2-M4-L2-C24)</small>
+
+#### Some Optimizers
+
+- **Stochastic Gradient Descent (SGD)** <small>(P2-M4-L2)</small>
+
+  > SGD: taking different small subsets of data, run them through neural network, calculate the gradient of error function, then move one step in that direction in each epoch. <small>(P2-M4-L2-C22)</small>
+  > ADAGRAD: it uses momentum and learning rate decay <small>(P2-M4-L2-C24)</small>
+  > Mini-batch <small>(P2-M4-L2-C25)</small>
+  > This is Stochastic Gradient Descent. It uses the following parameters: <small>(P7-M1-L5-C5)</small>
+  > - Learning rate.
+  > - Momentum (This takes the weighted average of the previous steps, in order to get a bit of momentum and go over bumps, as a way to not get stuck in local minima).
+  > - Nesterov Momentum (This slows down the gradient when it's close to the solution).
+  >
+  > BGD: taking all of data to train our model in each epoch.
+
+- **Adam** <small>(P7-M1-L5-C5)</small>
+
+  > Adam (Adaptive Moment Estimation) uses a more complicated exponential decay that consists of not just considering the average (first moment), but also the variance (second moment) of the previous steps.
+
+- **RMSProp** <small>(P7-M1-L5-C5)</small>
+
+  > RMSProp (RMS stands for Root Mean Squared Error) decreases the learning rate by dividing it by an exponentially decaying average of squared gradients.
 
 ## Convolutional Neural Networks
 
@@ -189,3 +203,5 @@ These are the resources we recommend in particular:
   - Andrej Karpathy's [CS231n Stanford course](http://cs231n.github.io/) on Convolutional Neural Networks.
   - Michael Nielsen's [free book](http://neuralnetworksanddeeplearning.com/) on Deep Learning.
   - Goodfellow, Bengio, and Courville's more advanced [free book](http://deeplearningbook.org/) on Deep Learning.
+
+## Recurrent Neural Networks
