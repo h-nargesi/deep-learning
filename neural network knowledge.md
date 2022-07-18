@@ -1,6 +1,6 @@
 progress: P2 - M5 - L4 - C3
 
-progress: P8 - M1 - L3 - C6
+progress: P8 - M1 - L4 - C4 <<<
 
 # Neural Networks
 
@@ -219,3 +219,5 @@ These are the resources we recommend in particular:
   - Andrej Karpathy's [CS231n Stanford course](http://cs231n.github.io/) on Convolutional Neural Networks.
   - Michael Nielsen's [free book](http://neuralnetworksanddeeplearning.com/) on Deep Learning.
   - Goodfellow, Bengio, and Courville's more advanced [free book](http://deeplearningbook.org/) on Deep Learning.
+
+## Recurrent Neural Networks
