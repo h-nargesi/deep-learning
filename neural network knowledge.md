@@ -1,6 +1,6 @@
 progress: P2 - M5 - L4 - C3
 
-progress: P7 - M1 - L5 - C8
+progress: P8 - M1 - L3 - C6
 
 # Neural Networks
 
@@ -70,7 +70,7 @@ https://www.adeveloperdiary.com/data-science/deep-learning/neural-network-with-s
 
 https://cs231n.github.io/neural-networks-case-study/
 
-### Training Neural Networks
+## Training Neural Networks
 
 The reason why neural network doesn't train as planned:
 
@@ -78,7 +78,7 @@ The reason why neural network doesn't train as planned:
 - Data can be noisy
 - The model could be taking years to run and we need it to run faster
 
-#### Model Training Optimization
+### Model Training Optimization
 
 - **Training, Validation, Test** <small>(P2-M1-L1-C7, P2-M4-L2-C20)</small>
 
@@ -126,11 +126,27 @@ The reason why neural network doesn't train as planned:
 
   > To eliminate the noise
 
-- **Numerical Stability** <small>(P2-M4-L2-C19,C23)</small>
+- **Numerical Stability** <small>(P2-M4-L2-C19,C23, P8-M1-L3)</small>
 
   > **Normalized Inputs And Initial Weights**:
   >   1. Inputs with zero mean and small equal variance
   >   2. Initial weights randomly with zero mean and small equal variance
+  >
+  > **Uniform Distribution**: <small>(P8-M1-L3-C4)</small>
+  >   1. Use random weights from -0.1 to +0.1.
+  >   2. Use general rule weights -1/√n to +1/√n (n is number of units).
+  >   *the result is same.*
+  >
+  > **Normal Distribution**: <small>(P8-M1-L3-C5)</small>
+  >
+  >   This is a little bit better than Uniform distribution.
+  >   Use truncated normal distibution.
+  >
+  > Additional Material
+  > New techniques for dealing with weights are discovered every few years. We've provided the most popular papers in this field over the years.
+  >   - [Understanding the difficulty of training deep feedforward neural networks](http://jmlr.org/proceedings/papers/v9/glorot10a/glorot10a.pdf)
+  >   - [Delving Deep into Rectifiers: Surpassing Human-Level Performance on ImageNet Classification](https://arxiv.org/pdf/1502.01852v1.pdf)
+  >   - [Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift](https://arxiv.org/pdf/1502.03167v2.pdf)
 
 - **Learning rate** in SGD <small>(P2-M4-L2)</small>
 
@@ -138,7 +154,7 @@ The reason why neural network doesn't train as planned:
   >
   > **Learning rate tunning**: Use low learning rate. <small>(P2-M4-L2-C24)</small>
 
-#### Some Optimizers
+### Some Optimizers
 
 - **Stochastic Gradient Descent (SGD)** <small>(P2-M4-L2)</small>
 
@@ -203,5 +219,3 @@ These are the resources we recommend in particular:
   - Andrej Karpathy's [CS231n Stanford course](http://cs231n.github.io/) on Convolutional Neural Networks.
   - Michael Nielsen's [free book](http://neuralnetworksanddeeplearning.com/) on Deep Learning.
   - Goodfellow, Bengio, and Courville's more advanced [free book](http://deeplearningbook.org/) on Deep Learning.
-
-## Recurrent Neural Networks
