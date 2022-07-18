@@ -7,6 +7,8 @@ face_generation/data/
 
 .ipynb_checkpoints/
 
+saved_model/
+
 */mnist/**
 
 *.pyc

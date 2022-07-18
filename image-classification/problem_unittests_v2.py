@@ -1,13 +1,10 @@
 import os
 import numpy as np
-import tensorflow.compat.v1 as tf
-import random
+import tensorflow as tf
 from unittest.mock import MagicMock
-
 
 def _print_success_message():
     print('Tests Passed')
-
 
 def test_folder_path(cifar10_dataset_folder_path):
     assert cifar10_dataset_folder_path is not None,\
@@ -91,10 +88,10 @@ def test_nn_image_inputs(neural_net_image_input):
     assert nn_inputs_out_x.get_shape().as_list() == [None, image_shape[0], image_shape[1], image_shape[2]],\
         'Incorrect Image Shape.  Found {} shape'.format(nn_inputs_out_x.get_shape().as_list())
 
-    assert nn_inputs_out_x.op.type == 'Placeholder',\
-        'Incorrect Image Type.  Found {} type'.format(nn_inputs_out_x.op.type)
+    assert nn_inputs_out_x.type_spec.value_type.__name__ == 'Tensor',\
+        'Incorrect Image Type.  Found {} type'.format(nn_inputs_out_x.type_spec.value_type.__name__)
 
-    assert nn_inputs_out_x.name == 'x:0', \
+    assert nn_inputs_out_x.name == 'x', \
         'Incorrect Name.  Found {}'.format(nn_inputs_out_x.name)
 
     print('Image Input Tests Passed.')
@@ -107,10 +104,10 @@ def test_nn_label_inputs(neural_net_label_input):
     assert nn_inputs_out_y.get_shape().as_list() == [None, n_classes],\
         'Incorrect Label Shape.  Found {} shape'.format(nn_inputs_out_y.get_shape().as_list())
 
-    assert nn_inputs_out_y.op.type == 'Placeholder',\
-        'Incorrect Label Type.  Found {} type'.format(nn_inputs_out_y.op.type)
+    assert nn_inputs_out_y.type_spec.value_type.__name__ == 'Tensor',\
+        'Incorrect Label Type.  Found {} type'.format(nn_inputs_out_y.type_spec.value_type.__name__)
 
-    assert nn_inputs_out_y.name == 'y:0', \
+    assert nn_inputs_out_y.name == 'y', \
         'Incorrect Name.  Found {}'.format(nn_inputs_out_y.name)
 
     print('Label Input Tests Passed.')
@@ -119,11 +116,11 @@ def test_nn_label_inputs(neural_net_label_input):
 def test_nn_keep_prob_inputs(neural_net_keep_prob_input):
     nn_inputs_out_k = neural_net_keep_prob_input()
 
-    assert nn_inputs_out_k.get_shape().ndims is None,\
+    assert nn_inputs_out_k.get_shape().ndims == 0,\
         'Too many dimensions found for keep prob.  Found {} dimensions.  It should be a scalar (0-Dimension Tensor).'.format(nn_inputs_out_k.get_shape().ndims)
 
-    assert nn_inputs_out_k.op.type == 'Placeholder',\
-        'Incorrect keep prob Type.  Found {} type'.format(nn_inputs_out_k.op.type)
+    #assert nn_inputs_out_k.type_spec.value_type.__name__ == 'Tensor',\
+    #    'Incorrect keep prob Type.  Found {} type'.format(nn_inputs_out_k.type_spec.value_type.__name__)
 
     assert nn_inputs_out_k.name == 'keep_prob:0', \
         'Incorrect Name.  Found {}'.format(nn_inputs_out_k.name)
@@ -132,7 +129,7 @@ def test_nn_keep_prob_inputs(neural_net_keep_prob_input):
 
 
 def test_con_pool(conv2d_maxpool):
-    test_x = tf.placeholder(tf.float32, [None, 32, 32, 5])
+    test_x = tf.keras.Input(shape=[32, 32, 5], dtype=tf.dtypes.float32)
     test_num_outputs = 10
     test_con_k = (2, 2)
     test_con_s = (4, 4)
@@ -148,7 +145,7 @@ def test_con_pool(conv2d_maxpool):
 
 
 def test_flatten(flatten):
-    test_x = tf.placeholder(tf.float32, [None, 10, 30, 6])
+    test_x = tf.keras.Input(shape=[10, 30, 6], dtype=tf.dtypes.float32)
     flat_out = flatten(test_x)
 
     assert flat_out.get_shape().as_list() == [None, 10*30*6],\
@@ -158,7 +155,7 @@ def test_flatten(flatten):
 
 
 def test_fully_conn(fully_conn):
-    test_x = tf.placeholder(tf.float32, [None, 128])
+    test_x = tf.keras.Input(shape=[128], dtype=tf.dtypes.float32)
     test_num_outputs = 40
 
     fc_out = fully_conn(test_x, test_num_outputs)
@@ -170,7 +167,7 @@ def test_fully_conn(fully_conn):
 
 
 def test_output(output):
-    test_x = tf.placeholder(tf.float32, [None, 128])
+    test_x = tf.keras.Input(shape=[128], dtype=tf.dtypes.float32)
     test_num_outputs = 40
 
     output_out = output(test_x, test_num_outputs)
@@ -182,10 +179,8 @@ def test_output(output):
 
 
 def test_conv_net(conv_net):
-    test_x = tf.placeholder(tf.float32, [None, 32, 32, 3])
-    test_k = tf.placeholder(tf.float32)
 
-    logits_out = conv_net(test_x, test_k)
+    logits_out = conv_net((32, 32, 3), 0.5, 10)
 
     assert logits_out.get_shape().as_list() == [None, 10],\
         'Incorrect Model Output.  Found {}'.format(logits_out.get_shape().as_list())

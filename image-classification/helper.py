@@ -28,6 +28,8 @@ def display_stats(cifar10_dataset_folder_path, batch_id, sample_id):
     """
     Display Stats of the the dataset
     """
+    print("All lables: ", _load_label_names())
+
     batch_ids = list(range(1, 6))
 
     if batch_id not in batch_ids:
@@ -53,16 +55,26 @@ def display_stats(cifar10_dataset_folder_path, batch_id, sample_id):
     print('Image - Min Value: {} Max Value: {}'.format(sample_image.min(), sample_image.max()))
     print('Image - Shape: {}'.format(sample_image.shape))
     print('Label - Label Id: {} Name: {}'.format(sample_label, label_names[sample_label]))
-    plt.axis('off')
-    plt.imshow(sample_image)
+    
+    plt.figure(figsize=(10,10))
+    for i in range(25):
+        plt.subplot(5,5,i+1)
+        plt.xticks([])
+        plt.yticks([])
+        plt.grid(False)
+        plt.imshow(features[i], cmap=plt.cm.binary)
+        plt.xlabel(label_names[labels[i]])
+    plt.show()
 
 
 def _preprocess_and_save(normalize, one_hot_encode, features, labels, filename):
     """
     Preprocess data and save it to file
     """
-    features = normalize(features)
-    labels = one_hot_encode(labels)
+    if normalize is not None:
+        features = normalize(features)
+    if one_hot_encode is not None:
+        labels = one_hot_encode(labels)
 
     pickle.dump((features, labels), open(filename, 'wb'))
 
@@ -124,12 +136,14 @@ def batch_features_labels(features, labels, batch_size):
         yield features[start:end], labels[start:end]
 
 
-def load_preprocess_training_batch(batch_id, batch_size):
+def load_preprocess_training_batch(batch_id, batch_size=None):
     """
     Load the Preprocessed Training data and return them in batches of <batch_size> or less
     """
     filename = 'preprocess_batch_' + str(batch_id) + '.p'
     features, labels = pickle.load(open(filename, mode='rb'))
+
+    if (batch_size is None): yield features[:], labels[:]
 
     # Return the training data in batches of size <batch_size> or less
     return batch_features_labels(features, labels, batch_size)
