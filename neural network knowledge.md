@@ -1,6 +1,6 @@
 progress: P2 - M5 - L4 - C3
 
-progress: P8 - M1 - L4 - C4 <<<
+progress: P8 - M1 - L4 - C8 <<<
 
 # Neural Networks
 
@@ -71,6 +71,8 @@ https://www.python-course.eu/softmax.php
 https://www.adeveloperdiary.com/data-science/deep-learning/neural-network-with-softmax-in-python/
 
 https://cs231n.github.io/neural-networks-case-study/
+
+There are many different [loss functions](https://keras.io/losses/) in Keras. <small>(P8-M1-L4-C5)</small>
 
 ## Training Neural Networks
 
@@ -180,6 +182,8 @@ The reason why neural network doesn't train as planned:
 
   > RMSProp (RMS stands for Root Mean Squared Error) decreases the learning rate by dividing it by an exponentially decaying average of squared gradients.
 
+Check out the [list of available optimizers](https://keras.io/optimizers/) in Keras. The optimizer is specified when you compile the model (in Step 7 of the notebook). <small>(P8-M1-L4-C5)</small>
+
 ## Convolutional Neural Networks
 
 - **Convolution** <small>(P2-M5-L2-C4,C11)</small>
@@ -252,4 +256,24 @@ Part 2: <small>(P8-M1-L4-C2)</small>
     - CNNs are used to [save endangered species](https://blogs.nvidia.com/blog/2016/11/04/saving-endangered-species/?adbsc=social_20170303_70517416)!
     - An app called [FaceApp](http://www.digitaltrends.com/photography/faceapp-neural-net-image-editing/) uses a CNN to make you smile in a picture or change genders.
 
+### Kebras (Tensorflow)
+
+Keras is an open-source software library that provides a Python interface for artificial neural networks. Keras acts as an interface for the TensorFlow library. 
+
+There are many callbacks (such as ModelCheckpoint) that you can use to monitor your model during the training process. If you'd like, check out the [details](https://keras.io/callbacks/#modelcheckpoint) here. You're encouraged to begin with learning more about the EarlyStopping callback. If you'd like to see another code example of ModelCheckpoint, check out [this blog](http://machinelearningmastery.com/check-point-deep-learning-models-keras/).
+
 ## Recurrent Neural Networks
+
+## Genetic Algorithm
+
+- leayers
+  - leayers counts
+  - leayers types
+  - ...
+
+- initial weights and bias
+
+- training process
+  - epoch
+  - batch size
+  - ...

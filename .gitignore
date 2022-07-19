@@ -8,6 +8,7 @@ face_generation/data/
 .ipynb_checkpoints/
 
 saved_model/
+*.hdf5
 
 */mnist/**
 
