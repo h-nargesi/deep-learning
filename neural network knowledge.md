@@ -1,6 +1,6 @@
 progress: P2 - M5 - L4 - C3
 
-progress: P8 - M1 - L4 - C3 <<<
+progress: P8 - M1 - L4 - C4 <<<
 
 # Neural Networks
 
@@ -28,7 +28,7 @@ ej = (∑k δk * wjk)
 Δwi = η * δ * xi
 ```
 
-### Functions
+### Activation Functions
 
 **Sigmoid**
 ```mathematica
@@ -40,6 +40,8 @@ f(x) = 1 / (1 + e^-x)
 ```mathematica
 f(i) = e^xi / (e^x1 + e^x2 + ... + e^xn)
 ```
+
+if you'd like more information on activation functions, check out this [website](http://cs231n.github.io/neural-networks-1/#actfun). <small>(P8-M1-L4-C4)</small>
 
 ### Error Functions
 
@@ -107,6 +109,8 @@ The reason why neural network doesn't train as planned:
 - **Dropout** <small>(P7-M1-L3, P2-M5-L1-C11,C12)</small>
 
   > turn off some nodes in each epoch
+  > 
+  > check out the [first research paper](https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf) to propose dropout as a technique for overfitting. <small>(P8-M1-L4-C4)</small>
 
 - **Local Minimum** <small>(P7-M1-L3)</small>
 
@@ -216,13 +220,13 @@ The reason why neural network doesn't train as planned:
 
 These are the resources we recommend in particular:
 
-Part 1: <small>P2-M5-L2-C35</small>
+Part 1: <small>(P2-M5-L2-C35)</small>
 
   - Andrej Karpathy's [CS231n Stanford course](http://cs231n.github.io/) on Convolutional Neural Networks.
   - Michael Nielsen's [free book](http://neuralnetworksanddeeplearning.com/) on Deep Learning.
   - Goodfellow, Bengio, and Courville's more advanced [free book](http://deeplearningbook.org/) on Deep Learning.
 
-Part 2: <small>P8-M1-L4-C2</small>
+Part 2: <small>(P8-M1-L4-C2)</small>
 
   - Read about the [WaveNet](https://deepmind.com/blog/wavenet-generative-model-raw-audio/) model.
     - Why train an A.I. to talk, when you can train it to sing ;)? In April 2017, researchers used a variant of the WaveNet model to generate songs. The original paper and demo can be found [here](http://www.creativeai.net/posts/W2C3baXvf2yJSLbY6/a-neural-parametric-singing-synthesizer).
