@@ -1,6 +1,6 @@
 progress: P2 - M5 - L4 - C3
 
-progress: P8 - M1 - L4 - C8 <<<
+progress: P8 - M1 - L4 - C11 <<<
 
 # Neural Networks
 
@@ -186,7 +186,7 @@ Check out the [list of available optimizers](https://keras.io/optimizers/) in Ke
 
 ## Convolutional Neural Networks
 
-- **Convolution** <small>(P2-M5-L2-C4,C11)</small>
+- **Convolution** <small>(P2-M5-L2-C4,C11, P8-M1-L4-C9..C12)</small>
 
   > Sharing the parameters and weights to all input data
   >
@@ -201,7 +201,7 @@ Check out the [list of available optimizers](https://keras.io/optimizers/) in Ke
   >   > `out_height = ceil((in_height - filter_height + 1) / strides[1])` <br>
   >   > `out_width = ceil((in_width - filter_width + 1) / strides[2])`
 
-- **Pooling** <small>(P2-M5-L2-C18-C28)</small>
+- **Pooling** <small>(P2-M5-L2-C18-C28, P8-M1-L4-C15)</small>
 
   > Combining all conv-net result neighborhood togather. (consider pooling size and pooling strides)
   > - Maximum
