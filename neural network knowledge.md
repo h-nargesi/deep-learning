@@ -1,6 +1,6 @@
 progress: P2 - M5 - L4 - C3
 
-progress: P8 - M1 - L4 - C17 <<<
+progress: P8 - M1 - L4 - C20 <<<
 
 # Neural Networks
 
@@ -225,9 +225,10 @@ Check out the [list of available optimizers](https://keras.io/optimizers/) in Ke
 
   > Using composition of multi-way convolution instead of a single convolution.
 
-- **Practical Tips** <small>(P8-M1-L4-C17)</small>
-  - Resize all of our images to input size.
-  - Kernel size: between 2 and 5
+- **Practical Tips**
+  - Resize all of our images to input size. <small>(P8-M1-L4-C17)</small>
+  - Kernel size: between 2 and 5. <small>(P8-M1-L4-C17)</small>
+  - Make you images argumented images for training your model, and then use `fit_generator` method to train them.<small>(P8-M1-L4-C20)</small>
 
 These are the resources we recommend in particular:
 
