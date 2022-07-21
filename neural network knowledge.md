@@ -1,6 +1,6 @@
 progress: P2 - M5 - L4 - C3
 
-progress: P8 - M1 - L4 - C11 <<<
+progress: P8 - M1 - L4 - C17 <<<
 
 # Neural Networks
 
@@ -185,6 +185,7 @@ The reason why neural network doesn't train as planned:
 Check out the [list of available optimizers](https://keras.io/optimizers/) in Keras. The optimizer is specified when you compile the model (in Step 7 of the notebook). <small>(P8-M1-L4-C5)</small>
 
 ## Convolutional Neural Networks
+<small>(P2-M5-L2, P8-M1-L4)</small>
 
 - **Convolution** <small>(P2-M5-L2-C4,C11, P8-M1-L4-C9..C12)</small>
 
@@ -213,6 +214,8 @@ Check out the [list of available optimizers](https://keras.io/optimizers/) in Ke
   > - Recent datasets are so big and complex we're more concerned about underfitting.
   > - Dropout is a much better regularizer.
   > - Pooling results in a loss of information. Think about the max pooling operation as an example. We only keep the largest of n numbers, thereby disregarding n-1 numbers completely.
+  >
+  > Check out the Keras [documentation](https://keras.io/layers/pooling/) on different types of pooling layers! <small>(P8-M1-L4-C15)</small>
 
 - **1x1 Convolutions** <small>(P2-M5-L2-C28)</small>
 
@@ -221,6 +224,10 @@ Check out the [list of available optimizers](https://keras.io/optimizers/) in Ke
 - **Inception** <small>(P2-M5-L2-C29)</small>
 
   > Using composition of multi-way convolution instead of a single convolution.
+
+- **Practical Tips** <small>(P8-M1-L4-C17)</small>
+  - Resize all of our images to input size.
+  - Kernel size: between 2 and 5
 
 These are the resources we recommend in particular:
 
