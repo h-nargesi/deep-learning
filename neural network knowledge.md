@@ -1,8 +1,8 @@
+# Neural Networks
+
 progress: P2 - M5 - L4 - C3
 
 progress: P8 - M1 - L4 - C20 **(TOREAD)**
-
-# Neural Networks
 
 ## Introduction
 
@@ -239,7 +239,7 @@ Check out the [list of available optimizers](https://keras.io/optimizers/) in Ke
 - **Practical Tips**
   - Resize all of our images to input size. <small>(P8-M1-L4-C17)</small>
   - Kernel size: between 2 and 5. <small>(P8-M1-L4-C17)</small>
-  - Make you images argumented images for training your model, and then use `fit_generator` method to train them.<small>(P8-M1-L4-C20)</small>
+  - Make your images augmented for training your model, and then use `fit_generator` method to train them.<small>(P8-M1-L4-C20)</small>
 
 These are the resources we recommend in particular:
 
