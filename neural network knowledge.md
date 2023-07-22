@@ -1,8 +1,13 @@
 # Neural Networks
 
-progress: P2 - M5 - L4 - C3
+progress: P2
 
-progress: P8 - M1 - L4 - C20 **(TOREAD)**
+Dot the main projects in P1/P2
+
+progress: P8 - M1 - L4 - C26 **(TOREAD)**
+
+passed: P8 - M1 - L5,6,7
+passed: P8 - M2
 
 ## Introduction
 
@@ -194,6 +199,7 @@ The reason why neural network doesn't train as planned:
 Check out the [list of available optimizers](https://keras.io/optimizers/) in Keras. The optimizer is specified when you compile the model (in Step 7 of the notebook). <small>(P8-M1-L4-C5)</small> **(TOREAD)**
 
 ## Convolutional Neural Networks
+
 <small>(P2-M5-L2, P8-M1-L4)</small>
 
 - **Convolution** <small>(P2-M5-L2-C4,C11, P8-M1-L4-C9..C12)</small>
@@ -241,6 +247,27 @@ Check out the [list of available optimizers](https://keras.io/optimizers/) in Ke
   - Kernel size: between 2 and 5. <small>(P8-M1-L4-C17)</small>
   - Make your images augmented for training your model, and then use `fit_generator` method to train them.<small>(P8-M1-L4-C20)</small>
 
+### Transfer Learning
+
+<small>(P8-M1-L4-C25)</small>
+
+Transfer learning involves taking a pre-trained neural network and adapting the neural network to a new, different data set.
+includes removeing the final layers of the networrk that are very specific to the training data set while keeping the ealier layers. Then we can add one or two more and train only the final layers.
+
+That depending on both:
+
+- the size of the new data set, and
+- the similarity of the new data set to the original data set
+
+the approach for using transfer learning will be different. There are four main cases:
+
+1. new data set is small, new data is similar to original training data **(End od ConvNet)**
+2. new data set is small, new data is different from original training data **(Start od ConvNet)**
+3. new data set is large, new data is similar to original training data **(Fine-tune)**
+4. new data set is large, new data is different from original training data **(Fine-tune or Retrain)**
+
+### More Study
+
 These are the resources we recommend in particular:
 
 Part 1: <small>(P2-M5-L2-C35)</small>
@@ -284,6 +311,8 @@ Keras is an open-source software library that provides a Python interface for ar
 There are many callbacks (such as ModelCheckpoint) that you can use to monitor your model during the training process. If you'd like, check out the [details](https://keras.io/callbacks/#modelcheckpoint) here. You're encouraged to begin with learning more about the EarlyStopping callback. If you'd like to see another code example of ModelCheckpoint, check out [this blog](http://machinelearningmastery.com/check-point-deep-learning-models-keras/).
 
 ## Recurrent Neural Networks
+
+- **Sequence Batching** <small>(P3-M1-L1-C4)</small>
 
 ## Genetic Algorithm
 
