@@ -1,10 +1,10 @@
 # Neural Networks
 
-progress: P2
+progress: P3 - M1 - L1 - C2 **(TOREAD)**
 
 Do the main projects in P1/P2
 
-progress: P8 - M1 - L4 - C26 **(TOREAD)**
+progress: P8 - M1 - L4
 
 passed: P8 - M1 - L5,6,7
 passed: P8 - M2
