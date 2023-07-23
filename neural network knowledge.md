@@ -2,7 +2,7 @@
 
 progress: P2
 
-Dot the main projects in P1/P2
+Do the main projects in P1/P2
 
 progress: P8 - M1 - L4 - C26 **(TOREAD)**
 
