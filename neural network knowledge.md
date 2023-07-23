@@ -243,6 +243,7 @@ Check out the [list of available optimizers](https://keras.io/optimizers/) in Ke
   Using composition of multi-way convolution instead of a single convolution **(TOREAD)**
 
 - **Practical Tips**
+
   - Resize all of our images to input size. <small>(P8-M1-L4-C17)</small>
   - Kernel size: between 2 and 5. <small>(P8-M1-L4-C17)</small>
   - Make your images augmented for training your model, and then use `fit_generator` method to train them.<small>(P8-M1-L4-C20)</small>
@@ -311,6 +312,8 @@ Keras is an open-source software library that provides a Python interface for ar
 There are many callbacks (such as ModelCheckpoint) that you can use to monitor your model during the training process. If you'd like, check out the [details](https://keras.io/callbacks/#modelcheckpoint) here. You're encouraged to begin with learning more about the EarlyStopping callback. If you'd like to see another code example of ModelCheckpoint, check out [this blog](http://machinelearningmastery.com/check-point-deep-learning-models-keras/).
 
 ## Recurrent Neural Networks
+
+- **LSTM** <small>(P3-M1-L1-C2)</small>
 
 - **Sequence Batching** <small>(P3-M1-L1-C4)</small>
 
