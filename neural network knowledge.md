@@ -2,11 +2,10 @@
 
 Do the main projects in P1/P2
 
-progress: P3 - M1 - L1 - C6 **(TOREAD)**
+progress: P3 - M1 - L1 - C9 **(TOREAD)**
 
 progress: P8 - M1 - L4
 
-passed: P3 - M1 - L1 - C5
 passed: P8 - M1 - L5,6,7
 passed: P8 - M2
 
@@ -316,7 +315,7 @@ There are many callbacks (such as ModelCheckpoint) that you can use to monitor y
 
 - **LSTM** <small>(P3-M1-L1-C2)</small>
 
-- **Sequence Batching** <small>(P3-M1-L1-C4)</small>
+- **Sequence Batching** <small>(P3-M1-L1-C4,6)</small>
 
 ## Genetic Algorithm
 
