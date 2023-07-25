@@ -2,9 +2,9 @@
 
 Do the main projects in P1/P2
 
-progress: P3 - M1 - L2
+progress: P3 - M1 - L3 - C1 **(TOREAD)**
 
-progress: P8 - M1 - L5 - C2 **(TOREAD)**
+progress: P8 - M1 - L4
 
 passed: P8 - M1 - L5,6,7
 passed: P8 - M2
