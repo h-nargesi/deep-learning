@@ -2,7 +2,7 @@
 
 Do the main projects in P1/P2
 
-progress: P3 - M1 - L3 - C1 **(TOREAD)**
+progress: P3 - M1 - L3 - C5 **(TOREAD)**
 
 progress: P8 - M1 - L4
 
@@ -164,7 +164,7 @@ The reason why neural network doesn't train as planned:
   - [Delving Deep into Rectifiers: Surpassing Human-Level Performance on ImageNet Classification](https://arxiv.org/pdf/1502.01852v1.pdf)
   - [Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift](https://arxiv.org/pdf/1502.03167v2.pdf)
 
-- **Learning rate** in SGD <small>(P2-M4-L2)</small>
+- **Learning rate** in SGD <small>(P2-M4-L2, P3-M1-L3)</small>
 
   **Learning rate decay**: Making learning rate smaller over the steps. <small>(P2-M4-L2-C23)</small>
   
@@ -177,6 +177,7 @@ The reason why neural network doesn't train as planned:
   SGD: taking different small subsets of data, run them through neural network, calculate the gradient of error function, then move one step in that direction in each epoch. <small>(P2-M4-L2-C22)</small>
 
   ADAGRAD: it uses momentum and learning rate decay <small>(P2-M4-L2-C24)</small>
+  [AdagradOptimizer](https://www.tensorflow.org/api_docs/python/tf/train/AdagradOptimizer)
 
   Mini-batch <small>(P2-M4-L2-C25)</small>
 
@@ -192,6 +193,8 @@ The reason why neural network doesn't train as planned:
 
   Adam (Adaptive Moment Estimation) uses a more complicated exponential decay that consists of not just considering the average (first moment), but also the variance (second moment) of the previous steps.
 
+  [AdamOptimizer](https://www.tensorflow.org/api_docs/python/tf/train/AdamOptimizer)
+  
 - **RMSProp** <small>(P7-M1-L5-C5)</small>
 
   RMSProp (RMS stands for Root Mean Squared Error) decreases the learning rate by dividing it by an exponentially decaying average of squared gradients.
@@ -317,15 +320,21 @@ There are many callbacks (such as ModelCheckpoint) that you can use to monitor y
 
 - **Sequence Batching** <small>(P3-M1-L1-C4,6)</small>
 
-### Tips and Tricks
+## Hyperparameters
 
-#### Monitoring Validation Loss vs. Training Loss
+<small>(P3-M1-L3)</small>
+
+1. Optimizer Hyperparameters
+  1. Learning Rate
+2. Model Hyperparameters
+
+### Monitoring Validation Loss vs. Training Loss
 
 The most important quantity to keep track of is the difference between your training loss (printed during training) and the validation loss (printed once in a while when the RNN is run on the validation data (by default every 1000 iterations)). In particular:
 
 - If your training loss is much lower than validation loss then this means the network might be **overfitting**. Solutions to this are to decrease your network size, or to increase dropout. For example you could try dropout of 0.5 and so on.
 - If your training/validation loss are about equal then your model is **underfitting**. Increase the size of your model (either number of layers or the raw number of neurons per layer)
-#### Approximate number of parameters
+### Approximate number of parameters
 
 The two most important parameters that control the model are `lstm_size` and `num_layers`. I would advise that you always use `num_layers` of either 2/3. The `lstm_size` can be adjusted based on how much data you have. The two important quantities to keep track of here are:
 
@@ -337,7 +346,7 @@ These two should be about the same order of magnitude. It's a little tricky to t
 - I have a 100MB dataset and I'm using the default parameter settings (which currently print 150K parameters). My data size is significantly larger (100 mil >> 0.15 mil), so I expect to heavily underfit. I am thinking I can comfortably afford to make `lstm_size` larger.
 - I have a 10MB dataset and running a 10 million parameter model. I'm slightly nervous and I'm carefully monitoring my validation loss. If it's larger than my training loss then I may want to try to increase dropout a bit and see if that helps the validation loss.
 
-#### Best models strategy
+### Best models strategy
 
 The winning strategy to obtaining very good models (if you have the compute time) is to always err on making the network larger (as large as you're willing to wait for it to compute) and then try different dropout values (between 0,1). Whatever model has the best validation performance (the loss, written in the checkpoint filename, low is good) is the one you should use in the end.
 
