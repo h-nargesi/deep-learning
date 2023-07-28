@@ -2,7 +2,7 @@
 
 Do the main projects in P1/P2
 
-progress: P3 - M1 - L3 - C5 **(TOREAD)**
+progress: P3 - M2 - L1 - C1 **(TOREAD)**
 
 progress: P8 - M1 - L4
 
@@ -172,6 +172,8 @@ The reason why neural network doesn't train as planned:
 
 ### Some Optimizers
 
+- **BGD**: taking all of data to train our model in each epoch.
+
 - **Stochastic Gradient Descent (SGD)** <small>(P2-M4-L2)</small>
 
 	SGD: taking different small subsets of data, run them through neural network, calculate the gradient of error function, then move one step in that direction in each epoch. <small>(P2-M4-L2-C22)</small>
@@ -179,15 +181,13 @@ The reason why neural network doesn't train as planned:
 	ADAGRAD: it uses momentum and learning rate decay <small>(P2-M4-L2-C24)</small>
 	[AdagradOptimizer](https://www.tensorflow.org/api_docs/python/tf/train/AdagradOptimizer)
 
-	Mini-batch <small>(P2-M4-L2-C25)</small>
+	Mini-batch <small>(P2-M4-L2-C25,)</small> and it's relation with Learning Rate. <small>(P3-M1-L3-C5)</small>
 
 	This is Stochastic Gradient Descent. It uses the following parameters: <small>(P7-M1-L5-C5)</small>
 
 	- Learning rate.
 	- Momentum (This takes the weighted average of the previous steps, in order to get a bit of momentum and go over bumps, as a way to not get stuck in local minima).
 	- Nesterov Momentum (This slows down the gradient when it's close to the solution).
-
-	BGD: taking all of data to train our model in each epoch.
 
 - **Adam** <small>(P7-M1-L5-C5)</small>
 
@@ -270,44 +270,6 @@ the approach for using transfer learning will be different. There are four main 
 3. new data set is large, new data is similar to original training data **(Fine-tune)**
 4. new data set is large, new data is different from original training data **(Fine-tune or Retrain)**
 
-### More Study
-
-These are the resources we recommend in particular:
-
-Part 1: <small>(P2-M5-L2-C35)</small>
-
-- Andrej Karpathy's [CS231n Stanford course](http://cs231n.github.io/) on Convolutional Neural Networks.
-
-- Michael Nielsen's [free book](http://neuralnetworksanddeeplearning.com/) on Deep Learning.
-
-- Goodfellow, Bengio, and Courville's more advanced [free book](http://deeplearningbook.org/) on Deep Learning.
-
-Part 2: <small>(P8-M1-L4-C2)</small>
-
-- Read about the [WaveNet](https://deepmind.com/blog/wavenet-generative-model-raw-audio/) model.
-	- Why train an A.I. to talk, when you can train it to sing ;)? In April 2017, researchers used a variant of the WaveNet model to generate songs. The original paper and demo can be found [here](http://www.creativeai.net/posts/W2C3baXvf2yJSLbY6/a-neural-parametric-singing-synthesizer).
-- Learn about CNNs [for text classification](http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/).
-	- You might like to sign up for the author's [Deep Learning Newsletter](https://www.getrevue.co/profile/wildml)!
-- Read about Facebook's [novel CNN approach](https://code.facebook.com/posts/1978007565818999/a-novel-approach-to-neural-machine-translation/) for language translation that achieves state-of-the-art accuracy at nine times the speed of RNN models.
-- Play [Atari games](https://deepmind.com/research/dqn/) with a CNN and reinforcement learning. You can [download](https://sites.google.com/a/deepmind.com/dqn/) the code that comes with this paper.
-	- If you would like to play around with some beginner code (for deep reinforcement learning), you're encouraged to check out Andrej Karpathy's [post](http://karpathy.github.io/2016/05/31/rl/).
-- Play [pictionary](https://quickdraw.withgoogle.com/#) with a CNN!
-	- Also check out all of the other cool implementations on the [A.I. Experiments](https://aiexperiments.withgoogle.com/) website. Be sure not to miss [AutoDraw](https://www.autodraw.com/)!
-- Read more about [AlphaGo](https://deepmind.com/research/alphago/).
-	- Check out [this article](https://www.technologyreview.com/s/604273/finding-solace-in-defeat-by-artificial-intelligence/?set=604287), which asks the question: *If mastering Go “requires human intuition,” what is it like to have a piece of one’s humanity challenged?*
-- Check out these *really cool* videos with drones that are powered by CNNs.
-	- Here's an interview with a startup - [Intelligent Flying Machines (IFM)](https://www.youtube.com/watch?v=AMDiR61f86Y).
-	- Outdoor autonomous navigation is typically accomplished through the use of the [global positioning system (GPS)](http://www.droneomega.com/gps-drone-navigation-works/), but here's a demo with a CNN-powered [autonomous drone](https://www.youtube.com/watch?v=wSFYOw4VIYY).
-- If you're excited about using CNNs in self-driving cars, you're encouraged to check out:
-	- our [Self-Driving Car Engineer Nanodegree](https://www.udacity.com/course/self-driving-car-engineer-nanodegree--nd013), where we classify signs in the [German Traffic Sign](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset) dataset in [this project](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project).
-	- our [Machine Learning Engineer Nanodegree](https://www.udacity.com/course/machine-learning-engineer-nanodegree--nd009), where we classify house numbers from the [Street View House Numbers](http://ufldl.stanford.edu/housenumbers/) dataset in [this project](https://github.com/udacity/machine-learning/tree/master/projects/digit_recognition).
-	- this [series of blog posts](https://pythonprogramming.net/game-frames-open-cv-python-plays-gta-v/) that details how to train a CNN in Python to produce a self-driving A.I. to play Grand Theft Auto V.
-- Check out some additional applications not mentioned in the video.
-	- Some of the world's most famous paintings have been [turned into 3D](http://www.businessinsider.com/3d-printed-works-of-art-for-the-blind-2016-1) for the visually impaired. Although the article does not mention *how* this was done, we note that it is possible to use a CNN to [predict depth](https://www.cs.nyu.edu/~deigen/depth/) from a single image.
-	- Check out [this research](https://research.googleblog.com/2017/03/assisting-pathologists-in-detecting.html) that uses CNNs to localize breast cancer.
-	- CNNs are used to [save endangered species](https://blogs.nvidia.com/blog/2016/11/04/saving-endangered-species/?adbsc=social_20170303_70517416)!
-	- An app called [FaceApp](http://www.digitaltrends.com/photography/faceapp-neural-net-image-editing/) uses a CNN to make you smile in a picture or change genders.
-
 ### Kebras (Tensorflow)
 
 Keras is an open-source software library that provides a Python interface for artificial neural networks. Keras acts as an interface for the TensorFlow library. 
@@ -316,7 +278,11 @@ There are many callbacks (such as ModelCheckpoint) that you can use to monitor y
 
 ## Recurrent Neural Networks
 
-- **LSTM** <small>(P3-M1-L1-C2)</small>
+- Cell Types
+
+	- **LSTM (Long Short Term Memory)** <small>(P3-M1-L1-C2)</small>
+	- **GRU (Gated Recurrent Unit)**
+	- **Vanilla RNN**
 
 - **Sequence Batching** <small>(P3-M1-L1-C4,6)</small>
 
@@ -327,9 +293,9 @@ There are many callbacks (such as ModelCheckpoint) that you can use to monitor y
 1. Optimizer Hyperparameters
 	- Learning Rate
 	- Minibatch
-	- Epochs
+	- Epochs (Validation Monitor <small>(P3-M1-L3-C6)</small>)
 2. Model Hyperparameters
-	- Number of Layers
+	- Number of Hidden Units Layers
 	- Model Specific Hyperparameters
 
 ### Monitoring Validation Loss vs. Training Loss
@@ -368,6 +334,7 @@ By the way, the size of your training and validation splits are also parameters.
 - initial weights and bias
 
 - training process
-	- epoch
+	- learning rate
 	- batch size
+	- epoch
 	- ...
