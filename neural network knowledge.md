@@ -2,7 +2,7 @@
 
 Do the main projects in P1/P2
 
-progress: P3 - M2 - L1 - C1 **(TOREAD)**
+progress: P3 - M2 - L1 - C1 **(TO-READ)**
 
 progress: P8 - M1 - L4
 
